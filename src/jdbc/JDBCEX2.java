@@ -33,7 +33,7 @@ public class JDBCEX2 {
 
 		//기본 설정값이 자동 커밋이어서 트랜젝션 처리를 구현하기 위해서는 
 		//자동 커밋 기능을 꺼야함
-//		con.setAutoCommit(false);
+		con.setAutoCommit(false);
 		
 		
 		System.out.println("오라클 DB에 연결되었습니다!!!");
@@ -42,7 +42,7 @@ public class JDBCEX2 {
 		int num = stmt.executeUpdate(sql);
 				
 		System.out.println(num + "행이 적용되었습니다.");
-		
+		stmt.executeUpdate("rollback");
 		con.close();
 	}
 }

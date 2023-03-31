@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 import daoex.entity.Dept;
 
-public interface DAO<T> {
+public interface DAO<T> {//T는 타입정보
 	static String URL = "jdbc:oracle:thin:@localhost:1521:xe";
 	
 	T get(int id);
